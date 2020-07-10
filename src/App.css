@@ -1,38 +1,157 @@
-.App {
-  text-align: center;
+/* CONTAINER STYLING  */
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+    height: 600px;
+    width: 375px;
+    margin: 0 auto;
+    border: darkslateblue 0.5px solid;
+    padding: 0;
+    background: url(/images/cloth-569222_1280.jpg);
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* HEADER ======================= */
+.header {
+    background-color: darkslateblue;
+    text-align: center;
+    color: rgb(210, 220, 241);
+    padding: 0;
+    margin-top: -6%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* END OF HEADER ========== */
+
+
+/* MAIN CONTENT HERE  */
+/* .main > * {
+    width: 90%;
+    margin: 1.5rem auto;
+} */
+
+.photo {
+    grid-area: photo;
+    height: 40vh;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+.slider {
+    grid-area: slider;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 1.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.currentTime, .endTime {
+    grid-area: currentTime;
+    margin-top: 0;
+    text-align: center;
+    color: darkslateblue;
+    font-size: 1.2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.nonee {grid-area: nonee;}
+.endTime {grid-area: endTime}
+
+
+.title {
+    grid-area: title;
+    word-spacing: 0;
+    line-height: 0;
+    text-align: center;
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: darkslateblue;
+}
+
+.rewind {
+    grid-area: rewind;
+    justify-self: start;
+    
+}
+
+.play {
+    grid-area: play;
+    align-self: center; 
+}
+
+.fastforward{
+    grid-area: fastforward;
+    justify-self: end;
+    text-align: center;
+}
+
+.rewind, .play, .fastforward {
+    width: 90%;
+    margin: .5rem auto;
+    text-align: center;
+    font-size: 1rem;
+    color: darkslateblue;
+}
+
+.play { font-size: 1.5rem;}
+.volume-down {grid-area: volume-down}
+.volume { grid-area: volume}
+.volume-up {grid-area: volume-up}
+
+
+.volume-down, .volume-up {
+    width: 90%;
+    margin: 1rem auto;
+    text-align: center;
+    font-size: 1.2rem;
+    color: darkslateblue;
+}
+.main{
+    display: grid;
+    grid-template-areas:  
+        "photo photo photo"
+        "slider slider slider"
+        "currentTime nonee endTime"
+        "title title title"
+        "rewind play fastforward"
+        "volume-down volume volume-up";
+    padding: 5%;
+}
+
+
+/* END OF MAIN CONTENT  */
+
+
+/* FOOTER STYLING ============== */
+.footer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    width: inherit;
+}
+
+.footer div{
+    width: 25%;
+    flex-basis: 25%;
+    text-align: center;
+}
+
+.footer div a {
+    display: block;
+    font-size: 1.9rem;
+    color: darkslateblue;
+    text-decoration: none;
+}
+
+.footer a {
+    padding: 0.8rem;
+    background-color: whitesmoke;
+    border-top: solid 0.5px darkslateblue;
+}
+
+.footer div a.active {
+    color: whitesmoke;
+    background-color: darkslateblue;
 }
